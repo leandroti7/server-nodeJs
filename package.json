@@ -1,0 +1,21 @@
+{
+  "name": "do-zero",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file=.env server.js",
+    "dev": "node --env-file=.env --watch server.js",
+    "create-table": "node --env-file=.env create-table.js",  
+    "delete-table": "node --env-file=.env delete-table.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "fastify": "^5.12.4",
+    "postgres": "^3.4.9"
+  }
+}
