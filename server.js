@@ -14,10 +14,14 @@
 
 
 import {fastify} from 'fastify';
+import cors from '@fastify/cors';
 // import { MemoryDatabase } from './databases-memory.js';
 // import { sql } from './db.js';
 
 const server = fastify();
+await server.register(cors, {
+    origin: process.env.FRONTEND_URL ?? 'http://localhost:3000',
+});
 // const result = await sql`SELECT NOW()`;
 // console.log(result);
 

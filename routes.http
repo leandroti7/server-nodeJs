@@ -1,4 +1,4 @@
-POST http://localhost:3333/videos
+POST https://server-nodejs-sufg.onrender.com/videos
 Content-Type: application/json;
 
 {
@@ -11,16 +11,16 @@ Content-Type: application/json;
 
 ###
 
-GET  http://localhost:3333/videos?search=My
+GET  https://server-nodejs-sufg.onrender.com/videos?search=Render
 ###
 
-PUT http://localhost:3333/videos/57e52dfa-8ea8-4ddb-8caf-670d38f1eea0
+PUT https://server-nodejs-sufg.onrender.com/videos/cc68ee59-1d8e-4710-b4c0-ea00bb459a48
 Content-Type: application/json;
 
 {
-  "title": "Video Nodes.js",
-  "description": "This video is about Node.js.",
-  "duration": 120,
+  "title": "Video Nodes.js in Render.com",
+  "description": "This video is about Node.js that's deployed on render.",
+  "duration": 200,
   "url": "http://example.com/nodejs-video"
 }
 
@@ -28,4 +28,4 @@ Content-Type: application/json;
 ###
 
 
-DELETE  http://localhost:3333/videos/4638c8e0-c370-4df4-b0a0-e5460ed966e2
+DELETE  https://server-nodejs-sufg.onrender.com/videos/4638c8e0-c370-4df4-b0a0-e5460ed966e2
