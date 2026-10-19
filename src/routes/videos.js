@@ -59,7 +59,16 @@ export async function videoRoutes(app, { database }) {
             }
         }
 
-        await database.update(parseId.data, bodyParse.data);
+        const videoExists = await database.update(parseId.data, bodyParse.data);
+        console.log(videoExists);
+        
+        if (!videoExists) {
+            throw new AppError(
+                404,
+                'NOT_FOUND',
+                'Video não encontrado'
+            );
+        }
 
         return reply.status(204).send()
     })
@@ -77,7 +86,16 @@ export async function videoRoutes(app, { database }) {
             );
         }
 
-        await database.delete(parseId.data);
+        const isDeleted = await database.delete(parseId.data);
+
+        if(!isDeleted) {
+            throw new AppError(
+                404,
+                'NOT_FOUND',
+                'Video não encontrado'
+            );
+        }
+
         return reply.status(204).send();
     });
 }
